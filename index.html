@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>炫图AI达人创作激励计划</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4ADE80', // 青苹果绿主色
+                        secondary: '#10B981', // 深绿色
+                        accent: '#059669', // 强调色
+                        dark: '#1E293B',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-gradient {
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            .bg-glass {
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
+            .animate-float {
+                animation: float 6s ease-in-out infinite;
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-green-50 to-green-100 min-h-screen font-sans">
+    <!-- 顶部LOGO区域 -->
+    <div class="bg-white py-4 border-b border-gray-100">
+        <div class="container mx-auto px-4 flex justify-center">
+            <!-- 自定义LOGO位置 -->
+            <img src="picwizai_logo.png" alt="炫图AI官方LOGO" class="h-12 w-auto">
+            <!-- 请将"your-logo.png"替换为您的实际LOGO图片路径 -->
+        </div>
+    </div>
+
+    <!-- 英雄区域 -->
+    <header class="pt-16 pb-20 md:pt-28 md:pb-32 px-4 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-primary/5 to-secondary/5 -z-10"></div>
+        <div class="absolute top-20 right-20 w-64 h-64 bg-primary/10 rounded-full filter blur-3xl -z-10"></div>
+        <div class="absolute bottom-20 left-20 w-80 h-80 bg-secondary/10 rounded-full filter blur-3xl -z-10"></div>
+        
+        <div class="container mx-auto max-w-5xl text-center">
+            <div class="inline-block px-4 py-1 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-full mb-6">
+                <span class="text-sm font-medium text-accent">0门槛 · 高激励 · 上不封顶</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+                炫图AI达人创作<br class="md:hidden">
+                <span class="bg-gradient-to-r from-primary to-secondary text-gradient">激励计划</span>
+            </h1>
+            <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+                火爆AI修图软件开放创作激励，低粉也能参加，单条奖励最高可上万！上不封顶！0门槛高质量赚钱机会等你来
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white font-medium px-8 py-4 rounded-full transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center">
+                    立即联系我们
+                </a>
+                <a href="#rewards" class="bg-white text-gray-800 font-medium px-8 py-4 rounded-full border border-gray-200 shadow-md hover:shadow-lg transition-all text-center">
+                    查看奖励详情
+                </a>
+            </div>
+            
+            <!-- 数据亮点 -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+                <div class="bg-white/80 bg-glass rounded-xl p-6 shadow-sm">
+                    <div class="text-3xl font-bold text-accent mb-2">0</div>
+                    <div class="text-gray-600">参与门槛</div>
+                </div>
+                <div class="bg-white/80 bg-glass rounded-xl p-6 shadow-sm">
+                    <div class="text-3xl font-bold text-accent mb-2">不限</div>
+                    <div class="text-gray-600">粉丝数量</div>
+                </div>
+                <div class="bg-white/80 bg-glass rounded-xl p-6 shadow-sm">
+                    <div class="text-3xl font-bold text-accent mb-2">3天</div>
+                    <div class="text-gray-600">免费会员</div>
+                </div>
+                <div class="bg-white/80 bg-glass rounded-xl p-6 shadow-sm">
+                    <div class="text-3xl font-bold text-accent mb-2">¥10000</div>
+                    <div class="text-gray-600">单条最高奖励</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 活动概览 -->
+    <section id="overview" class="py-20 px-4 bg-white">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">活动概览</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">炫图AI达人创作激励计划是面向所有内容创作者的活动，通过创作与炫图AI相关的优质内容获得现金奖励</p>
+            </div>
+            
+            <div class="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl p-8 md:p-10">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">为什么加入我们？</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-accent">
+                                    <i class="fa fa-check text-sm"></i>
+                                </div>
+                                <span>0门槛参与，无论粉丝多少都能加入计划</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-accent">
+                                    <i class="fa fa-check text-sm"></i>
+                                </div>
+                                <span>首次参与即可获得3日免费炫图AI会员</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-accent">
+                                    <i class="fa fa-check text-sm"></i>
+                                </div>
+                                <span>作品达到指定点赞数即可获得现金奖励，单条最高10000元</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-accent">
+                                    <i class="fa fa-check text-sm"></i>
+                                </div>
+                                <span>达人群内提供爆款内容参考，不定期自媒体经验分享，更容易获得高额奖励</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 此处为自定义配图区域 -->
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl rotate-3"></div>
+                        <!-- 请替换下方图片为您的自定义图片 -->
+                        <img src="pic1.jpg" alt="炫图AI作品展示" class="relative rounded-2xl shadow-lg w-full h-auto">
+                        <div class="absolute -bottom-4 -left-4 bg-white rounded-xl p-4 shadow-md animate-float">
+                            <div class="flex items-center gap-2">
+                                <i class="fa fa-thumbs-up text-accent"></i>
+                                <span class="font-medium">高赞作品轻松获得奖励</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 参与流程 -->
+    <section id="process" class="py-20 px-4 bg-gray-50">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">报名参与流程</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">简单四步即可加入炫图AI达人创作激励计划，开启你的创作变现之旅</p>
+            </div>
+            
+            <div class="relative">
+                <!-- 连接线 -->
+                <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary/30 to-secondary/30 transform -translate-x-1/2"></div>
+                
+                <!-- 步骤1 -->
+                <div class="flex flex-col md:flex-row items-center mb-12 md:mb-24 relative">
+                    <div class="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 mt-6 md:mt-0">
+                        <h3 class="text-xl font-bold mb-2">添加官方运营微信</h3>
+                        <p class="text-gray-600">添加炫图AI官方运营微信：<span class="font-medium">funonedream</span></p>
+                    </div>
+                    <div class="md:w-12 flex justify-center order-1 md:order-2">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary text-white flex items-center justify-center font-bold shadow-md z-10">1</div>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12 order-3 hidden md:block"></div>
+                </div>
+                
+                <!-- 步骤2 -->
+                <div class="flex flex-col md:flex-row items-center mb-12 md:mb-24 relative">
+                    <div class="md:w-1/2 md:pr-12 order-2 md:order-1 mt-6 md:mt-0 hidden md:block"></div>
+                    <div class="md:w-12 flex justify-center order-1 md:order-2">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary text-white flex items-center justify-center font-bold shadow-md z-10">2</div>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12 order-3 mt-6 md:mt-0">
+                        <h3 class="text-xl font-bold mb-2">提交账号审核</h3>
+                        <p class="text-gray-600">提交个人新媒体账号主页链接（抖音、小红书、视频号）审核，通过后拉入达人群</p>
+                    </div>
+                </div>
+                
+                <!-- 步骤3 -->
+                <div class="flex flex-col md:flex-row items-center mb-12 md:mb-24 relative">
+                    <div class="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 mt-6 md:mt-0">
+                        <h3 class="text-xl font-bold mb-2">下载注册炫图AI</h3>
+                        <p class="text-gray-600">下载注册炫图AI应用，提交注册手机号，首次参与可获得3日免费会员</p>
+                    </div>
+                    <div class="md:w-12 flex justify-center order-1 md:order-2">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary text-white flex items-center justify-center font-bold shadow-md z-10">3</div>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12 order-3 hidden md:block"></div>
+                </div>
+                
+                <!-- 步骤4 -->
+                <div class="flex flex-col md:flex-row items-center relative">
+                    <div class="md:w-1/2 md:pr-12 order-2 md:order-1 mt-6 md:mt-0 hidden md:block"></div>
+                    <div class="md:w-12 flex justify-center order-1 md:order-2">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary text-white flex items-center justify-center font-bold shadow-md z-10">4</div>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12 order-3 mt-6 md:mt-0">
+                        <h3 class="text-xl font-bold mb-2">产出合格作品</h3>
+                        <p class="text-gray-600">3日内需要产出至少一篇经审核合格的视频作品，否则无法继续参与计划</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 奖励标准 -->
+    <section id="rewards" class="py-20 px-4 bg-white">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">奖励标准</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">作品达到指定点赞数即可获得相应奖励，点赞数越高，奖励越丰厚</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 奖励卡片1 -->
+                <div class="bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl transition-all card-hover p-6">
+                    <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                        <i class="fa fa-user-plus text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">账号审核通过</h3>
+                    <p class="text-gray-600 mb-4">个人主页通过审核后</p>
+                    <div class="text-2xl font-bold text-accent">3日免费会员</div>
+                </div>
+                
+                <!-- 奖励卡片2 -->
+                <div class="bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl transition-all card-hover p-6">
+                    <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                        <i class="fa fa-check-circle text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">合格作品发布</h3>
+                    <p class="text-gray-600 mb-4">发布经审核合格的作品后</p>
+                    <div class="text-xl font-bold text-accent">获得后续参与机会</div>
+                </div>
+                
+                <!-- 奖励卡片3 -->
+                <div class="bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl transition-all card-hover p-6">
+                    <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                        <i class="fa fa-thumbs-up text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">100个点赞</h3>
+                    <p class="text-gray-600 mb-4">作品获得100个点赞后</p>
+                    <div class="text-2xl font-bold text-accent">¥16.6 红包或炫图AI会员月卡</div>
+                </div>
+                
+                <!-- 奖励卡片4 -->
+                <div class="bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl transition-all card-hover p-6">
+                    <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                        <i class="fa fa-thumbs-up text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">1000个点赞</h3>
+                    <p class="text-gray-600 mb-4">作品获得1000个点赞后</p>
+                    <div class="text-2xl font-bold text-accent">¥100 红包或炫图AI会员半年卡</div>
+                </div>
+                
+                <!-- 奖励卡片5 -->
+                <div class="bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl transition-all card-hover p-6">
+                    <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                        <i class="fa fa-thumbs-up text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">10000个点赞</h3>
+                    <p class="text-gray-600 mb-4">作品获得10000个点赞后</p>
+                    <div class="text-2xl font-bold text-accent">¥1000 红包<br><span class="text-base font-normal text-gray-500">(小红书、视频号800元)</span></div>
+                </div>
+                
+                <!-- 奖励卡片6 -->
+                <div class="bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl transition-all card-hover p-6 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-accent text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                        最高奖励
+                    </div>
+                    <div class="w-14 h-14 rounded-full bg-gradient-to-r from-primary to-accent flex items-center justify-center mb-6">
+                        <i class="fa fa-trophy text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">100000个点赞</h3>
+                    <p class="text-gray-600 mb-4">作品获得100000个点赞后</p>
+                    <div class="text-2xl font-bold text-accent">¥10000 红包<br><span class="text-base font-normal text-gray-500">(小红书、视频号8000元)</span></div>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-gray-50 rounded-xl p-6 border border-gray-100">
+                <p class="text-gray-600"><i class="fa fa-info-circle text-accent mr-2"></i> 注：同一条内容多平台发布取最高赞计算奖励，数据统计以视频发布后7天内的数据为准</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品要求 -->
+    <section id="requirements" class="py-20 px-4 bg-gradient-to-br from-green-50 to-green-100">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">作品要求</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">了解作品创作规范，更容易通过审核并获得高额奖励</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-6">内容与合规要求</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-accent flex-shrink-0">
+                                    <i class="fa fa-check text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">内容需符合营销标准</p>
+                                    <p class="text-gray-600 text-sm">用户需明确知道使用了炫图AI产品，并加上#炫图ai标签</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-accent flex-shrink-0">
+                                    <i class="fa fa-check text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">内容必须合规</p>
+                                    <p class="text-gray-600 text-sm">不得涉及违规、低质、重复或无关内容</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-accent flex-shrink-0">
+                                    <i class="fa fa-check text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">可参考爆款内容</p>
+                                    <p class="text-gray-600 text-sm">达人群内提供最新爆款短视频内容参考，更容易获得奖励</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 w-6 h-6 rounded-full bg-red-100 flex items-center justify-center text-red-500 flex-shrink-0">
+                                    <i class="fa fa-times text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-red-600">禁止刷赞作弊</p>
+                                    <p class="text-gray-600 text-sm">刷赞、作弊行为一经发现，取消奖励资格并终止所有合作</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-gradient-to-br from-primary/5 to-secondary/5 p-8">
+                        <h3 class="text-2xl font-bold mb-6">数据与奖励说明</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-accent flex-shrink-0">
+                                    <i class="fa fa-bar-chart text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">数据统计周期</p>
+                                    <p class="text-gray-600 text-sm">点赞数以视频发布后7天内的数据为准，由炫图AI官方运营统计确认</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-accent flex-shrink-0">
+                                    <i class="fa fa-money text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">奖励发放时间</p>
+                                    <p class="text-gray-600 text-sm">符合条件的创作者将在数据确认后3个工作日内收到奖励，达人群内结算</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-accent flex-shrink-0">
+                                    <i class="fa fa-refresh text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">规则可能调整</p>
+                                    <p class="text-gray-600 text-sm">具体规则可能根据实际情况优化，请以达人群内最新公告为准</p>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <div class="mt-8 p-4 bg-white/50 rounded-xl border border-white/20">
+                            <p class="text-sm text-gray-600">
+                                炫图AI保留对本次活动规则、条款及奖励机制的最终解释权，相关解释与变更不另行通知，以最新奖励规则为准。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们区域 -->
+    <section id="contact" class="py-20 px-4 bg-white">
+        <div class="container mx-auto max-w-5xl">
+            <div class="bg-gradient-to-r from-primary to-secondary rounded-3xl overflow-hidden shadow-2xl">
+                <div class="p-8 md:p-12 text-white">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">立即加入炫图AI达人计划</h2>
+                    <p class="mb-8 opacity-90">
+                        立即报名参与，开启你的AI创作变现之旅。0门槛，高奖励，兼职新选择！
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3">
+                            <i class="fa fa-check-circle"></i>
+                            <span>0粉丝也能参与，无需任何门槛</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa fa-check-circle"></i>
+                            <span>首次参与即送3天免费会员</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa fa-check-circle"></i>
+                            <span>高额现金奖励，最高可达10000元</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="flex items-center gap-4">
+                            <i class="fa fa-weixin text-3xl"></i>
+                            <div>
+                                <p class="text-sm opacity-80">官方运营微信</p>
+                                <p class="font-medium">funonedream</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i class="fa fa-qq text-3xl"></i>
+                            <div>
+                                <p class="text-sm opacity-80">官方QQ</p>
+                                <p class="font-medium">927450669</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i class="fa fa-envelope text-3xl"></i>
+                            <div>
+                                <p class="text-sm opacity-80">官方邮箱</p>
+                                <p class="font-medium">927450669@qq.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i class="fa fa-globe text-3xl"></i>
+                            <div>
+                                <p class="text-sm opacity-80">官方网站</p>
+                                <p class="font-medium">www.xuantuai.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 text-white py-12 px-4">
+        <div class="container mx-auto max-w-5xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <!-- 底部LOGO位置 -->
+                    <div class="flex items-center space-x-2 mb-6">
+                        <img src="picwizai_logo.png" alt="炫图AI官方LOGO" class="h-10 w-auto">
+                        <!-- 请将"your-logo.png"替换为您的实际LOGO图片路径 -->
+                        <span class="text-xl font-bold">炫图AI</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        火爆的AI修图软件，让你的创作更精彩，轻松获得高额奖励
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-weixin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">活动导航</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#overview" class="text-gray-400 hover:text-white transition-colors">活动概览</a></li>
+                        <li><a href="#process" class="text-gray-400 hover:text-white transition-colors">参与流程</a></li>
+                        <li><a href="#rewards" class="text-gray-400 hover:text-white transition-colors">奖励标准</a></li>
+                        <li><a href="#requirements" class="text-gray-400 hover:text-white transition-colors">作品要求</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">联系我们</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-weixin text-gray-400 mt-1"></i>
+                            <span class="text-gray-400">funonedream</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-qq text-gray-400 mt-1"></i>
+                            <span class="text-gray-400">927450669</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-envelope text-gray-400 mt-1"></i>
+                            <span class="text-gray-400">927450669@qq.com</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-globe text-gray-400 mt-1"></i>
+                            <span class="text-gray-400">www.xuantuai.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
+                <p>Copyright ©2025 All rights reserved xuantuai.com | 炫图AI保留活动最终解释权</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+    
